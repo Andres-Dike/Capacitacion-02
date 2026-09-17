@@ -1,3 +1,5 @@
+#esta clase no aplica el principio SPR, ya que tiene varias responsabilidades,
+#  como agregar tareas, listar tareas y marcar tareas como completadas.
 class ToDo:
 
     def __init__(self):
@@ -28,13 +30,13 @@ class ToDo:
                 return "Tarea marcada como completada"
 
         return "Tarea no encontrada"
-    todo=ToDo.py()
-    print(todo.agregar_tarea("Comprar leche"))
-    print(todo.agregar_tarea("Hacer ejercicio"))
-    print(todo.agregar_tarea("Comprar leche"))
-    print(todo.agregar_tarea("Hacer ejercicio"))
-    print(todo.agregar_tarea(""))
-    print(todo.marcar_completada("Comprar leche"))
-    print(todo.marcar_completada("Hacer ejercicio"))
-    print(todo.listar_tareas())
-    
+todo=ToDo()
+print(todo.agregar_tarea("Comprar leche"))
+print(todo.agregar_tarea("Hacer ejercicio"))
+print(todo.agregar_tarea("Comprar leche"))
+print(todo.agregar_tarea("Hacer ejercicio"))
+print(todo.agregar_tarea(""))
+print(todo.marcar_completada("Comprar leche"))
+print(todo.marcar_completada("Hacer ejercicio"))
+print(todo.listar_tareas())
+       
