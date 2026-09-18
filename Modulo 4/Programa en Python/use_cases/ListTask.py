@@ -4,7 +4,7 @@ class ListTask:
        def __init__(self, repository: TaskRepository):
            self.repository = repository
        def listar_tareas(self):
-           if self.lista_esta_vacia():
+         if not self.lista_esta_vacia():
                
             return self.repository.listar_tareas()
 
