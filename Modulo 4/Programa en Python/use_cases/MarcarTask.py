@@ -1,7 +1,9 @@
-from domain.Task import Task
-from repository.TaskRepository import TaskRepository
+from domain.ports.TaskRepositoryPort import TaskRepositoryPort
+
+# Caso de uso: marcar tarea como completada. Depende del PUERTO.
+# Incluye validaciones a nivel de caso de uso (no en el repositorio).
 class MarcarTask:
-    def __init__(self, repository: TaskRepository):
+    def __init__(self, repository: TaskRepositoryPort):
         self.repository = repository
 
     def marcar_completada(self, nombre):
@@ -9,11 +11,10 @@ class MarcarTask:
             return "La tarea no puede estar vacía"
         if not self.existe_tarea(nombre):
             return "La tarea no existe"
-  
-    
-    def existe_tarea(self, nombre):
-     for tarea in self.repository.listar_tareas():
-         if tarea.nombre == nombre:
-            return True
+        return self.repository.marcar_completada(nombre)
 
-     return False 
+    def existe_tarea(self, nombre):
+        for tarea in self.repository.listar_tareas():
+            if tarea.nombre == nombre:
+                return True
+        return False

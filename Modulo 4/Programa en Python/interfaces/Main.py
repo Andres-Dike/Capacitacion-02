@@ -1,9 +1,11 @@
-#esta clase tiene laresponsabilidad de manejar la interacción con el usuario, 
-# y delega la responsabilidad de manejar las tareas a la clase TaskService.
+# Adaptador de entrada: interfaz de linea de comandos (CLI).
+# Delega la logica a los casos de uso; no conoce la infraestructura concreta.
 from use_cases.CreateTask import CreateTask
 from use_cases.ListTask import ListTask
 from use_cases.MarcarTask import MarcarTask
-from repository.TaskRepository import TaskRepository
+from infrastructure.InMemoryTaskRepository import InMemoryTaskRepository
+
+
 class Main:
     def __init__(self, createTask, listTask, marcarTask):
         self.CreateTask = createTask
@@ -23,7 +25,7 @@ class Main:
                 resultado = self.CreateTask.agregar_tarea(nombre)
                 print(resultado)
             elif opcion == "2":
-                tareas = self.ListTask.listar_tareas()
+                tareas = self.ListTask.listar_tareas() or []
                 for i, tarea in enumerate(tareas):
                     estado = "Completada" if tarea.completada else "Pendiente"
                     print(f"{i + 1}. {tarea.nombre} - {estado}")
@@ -35,10 +37,14 @@ class Main:
                 break
             else:
                 print("Opción inválida. Intente nuevamente.")
-repository = TaskRepository()
-CreateTask = CreateTask(repository)
-ListTask = ListTask(repository)
-MarcarTask = MarcarTask(repository)
 
-app = Main(CreateTask, ListTask, MarcarTask)
+
+# Composicion / inyeccion de dependencias:
+# aqui se elige el adaptador concreto y se inyecta en los casos de uso.
+repository = InMemoryTaskRepository()
+createTask = CreateTask(repository)
+listTask = ListTask(repository)
+marcarTask = MarcarTask(repository)
+
+app = Main(createTask, listTask, marcarTask)
 app.run()

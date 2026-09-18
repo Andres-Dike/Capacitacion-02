@@ -1,8 +1,10 @@
 from domain.Task import Task
-from repository.TaskRepository import TaskRepository
-#esta clase cumple con spr, ya que tiene una sola responsabilidad, que es manejar la creación de tareas,
+from domain.ports.TaskRepositoryPort import TaskRepositoryPort
+
+# Caso de uso: crear una tarea. Cumple SRP.
+# Depende del PUERTO (abstraccion), no de la implementacion concreta.
 class CreateTask:
-    def __init__(self, repository: TaskRepository):
+    def __init__(self, repository: TaskRepositoryPort):
         self.repository = repository
 
     def agregar_tarea(self, nombre):
@@ -12,6 +14,3 @@ class CreateTask:
         tarea = Task(nombre)
         self.repository.agregar_tarea(tarea)
         return tarea
-    
-        # Esta función marca la tarea como completada
-   
