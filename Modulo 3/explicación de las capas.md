@@ -20,3 +20,4 @@ Aqui se manejan las clases que van atener la interaccion externa del sistema, es
 
 el dominio define el contrato, la infraestructura lo implementa, y los casos 
 de uso lo usan
+![alt text](image.png)

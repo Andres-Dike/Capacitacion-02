@@ -1,14 +1,40 @@
-Que aprendi
-Como crear un ToDO con funcionalidades en Python, hacer my primer READMi
 
-Qué practiqué
+Módulo trabajado: Modulo 1
+
+Fecha de registro:18/09/2026
+
+Qué investigué:
+Variables y tipos de datos.
+Condicionales.
+Bucles.
+Funciones.
+Listas.
+Diccionarios.
+Manejo básico de errores.
+Clases simples.
+Lectura de errores en consola.
+Ejecución de scripts Python.
+Diferencia entre escribir código y entender código
+
+Qué entendí:
+Que los fundamnetos de la programacion, siempre son importantes
+
+Qué practique:
 A redactar un readmi de manera estructurada
+Qué entregué:
+Ejercicios en python, readme, bitacora, conceptos, evidencia
 
-Dónde tuve dificultad
-En saber si para poder si mi sistema necesita realmente la version prederteminada de python
+Qué errores tuve:
+Al momento de hacer el README olvie los detalles tecnicos de dependencias para ejecutar el programa
 
-Qué hice para resolverlo
-Consulte a ChatGPT si se presisaba tener la version exacta del py
+Cómo intenté resolverlos:
+Consulte a la IA
 
-Qué necesito reforzar
-Como hacer un README de manera estructurada y logica con palabras tecnicas para la ejecucion de un programa.
+Qué prompts usé:
+Mandame un ejemplo de como puedo hacer un readme basico de mi programa
+Qué validé por mi cuenta:
+Como hechos los readme de iTickets
+
+Qué necesito reforzar:
+Como hacer un readme tecnico
+Preguntas para revision
